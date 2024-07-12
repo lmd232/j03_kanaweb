@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #F1F1F1;
+            color: #000;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .contact-info {
+            margin-top: 40px;
+        }
+        .contact-info h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #333;
+        }
+        .contact-info p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .contact-details div {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            flex: 1;
+            position: relative; 
+        }
+
+        .contact-details div:first-child::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -5px;
+            width: 1px;
+            height: calc(100% - 20px);
+            background: #ccc;
+            z-index: 1;
+        }
+
+        .contact-details div h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .contact-details div p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .address {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .address img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .address p {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .hotline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .hotline img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .hotline p {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .contact-form-map {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background: #fff;
+            padding: 20px 0;
+        }
+        .contact-form {
+            width: 35%;
+        }
+        .map {
+            width: 60%;
+            padding: 20px 0;
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group textarea {
+            height: 100px;
+            resize: none;
+        }
+        .form-group button {
+            display: inline-block;
+            background: black;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .form-group button:hover {
+            background: white;
+            color: black;
+            border: 2px solid #000;
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .form-label {
+            color: rgb(98, 96, 96); 
+        }
+
+        .faq-section {
+            background: #fff;
+            /* width: 100vw; Đảm bảo chiều rộng đầy đủ */
+            padding: 50px 0;
+            margin-top: 15px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: height 0.3s ease;
+            /* background-color: #F1F1F1; */
+            /* width: 100%; */
+        }
+        .faq-header {
+            text-align: left;
+            margin-bottom: 20px;
+            margin-right: 80px;;
+        }
+        .faq-header h2 {
+            font-size: 42px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .faq-header p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .faq-items {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+        }
+        .faq-item {
+            margin: 20px 0; 
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+        }
+        .faq-item h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item .faq-content {
+            display: none;
+            padding-top: 10px;
+            color: #666;
+        }
+        .faq-item.open .faq-content {
+            display: block;
+        }
+        .faq-item.open h3::after {
+            content: '-';
+        }
+        .faq-item h3::after {
+            content: '+';
+            font-size: 20px;
+        }
+        .faq-section-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script>
+        function showMap(mapId) {
+            // Hide all maps
+            document.querySelectorAll('.map iframe').forEach(iframe => {
+                iframe.style.display = 'none';
+            });
+
+            // Show the selected map
+            document.getElementById(mapId).style.display = 'block';
+        }
+
+        // Show the first map by default
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('map1').style.display = 'block';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item h3');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    parent.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <style>
+        a:link {
+            text-decoration: none; 
+            color: black;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Căn giữa nội dung bên trong nav */
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Căn logo sang trái và menu sang phải */
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: black;
+            margin: 4px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(52, 51, 51);
+            font-weight: bold;
+            padding: 10px 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: black;
+        }
+
+        nav a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: black;
+            visibility: visible;
+            transform: scaleX(1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo {
+            width: 70px;
+            height: 40px;
+        }
+
+        nav.scrolled {
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* ----------------- Màn hình thu nhỏ <thanh menu> ---------------- */
+        @media (max-width: 1024px) {
+            .menu-toggle {
+                display: flex;
+                margin: 0 auto; /* Căn giữa menu-toggle */
+            }
+            
+            #nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+        
+            #nav-list li {
+                width: 100%;
+                margin: 10px 0;
+            }
+        
+            #nav-list li a {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+        }
+    </style>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+    <div class="header">
+        <h1>Kết nối ngay với Kana và nhận ưu đãi sớm nhất.</h1>
+    </div>
+    <div class="container">
+        <div class="contact-info">
+            <h2 style="font-style: italic;">🖤 Cảm ơn quý khách đã đặt lòng tin vào Kana</h2>
+            <p>Kana luôn nỗ lực để mang đến những trải nghiệm tốt nhất cho quý khách. Quý khách cần Kana thời gian nào, Kana sẽ luôn cố gắng phản hồi sớm nhất có thể để phục vụ quý khách.</p>
+            <div class="contact-details">
+                <div>
+                    <h3>Kết nối</h3>
+                    <div class="hotline">
+                        <img src="./img/hotline.png" alt="41hangtrong" style="height: 20px; width:20px;">
+                        <p>Hotline: 024 3928 6208</p>
+                    </div>
+                    <div class="hotline">
+                        <img src="./img/hotline.png" alt="32bnhachung" style="height: 20px; width:20px;">
+                        <p>Hotline: 0968 536 258</p>
+                    </div>
+                    <div class="hotline">
+                        <img src="./img/hotline.png" alt="112trieuvietvuong" style="height: 20px; width:20px;">
+                        <p>Hotline: 024 6684 2255</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Các cơ sở</h3>
+                    <div class="address" onclick="showMap('map1')">
+                        <img src="./img/address.png" alt="41hangtrong" style="height: 20px; width:20px;">
+                        <p>41 Hàng Trống, Hàng Trống, Hoàn Kiếm, Hà Nội, Việt Nam</p>
+                    </div>
+                    <div class="address" onclick="showMap('map2')">
+                        <img src="./img/address.png" alt="32bnhachung" style="height: 20px; width:20px;">
+                        <p>32B Nhà Chung, Hàng Trống, Hoàn Kiếm, Hà Nội, Việt Nam</p>
+                    </div>
+                    <div class="address" onclick="showMap('map3')">
+                        <img src="./img/address.png" alt="112trieuvietvuong" style="height: 20px; width:20px;">
+                        <p>112 Triệu Việt Vương, Bùi Thị Xuân, Hai Bà Trưng, Hà Nội, Việt Nam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-map">
+            <div class="contact-form">
+                <h2 style="font-style: italic;">🖤 Liên hệ ngay</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Họ và tên</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Thông điệp gửi gắm</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Gửi thông điệp</button>
+                    </div>
+                </form>
+            </div>
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Ngăn chặn hành động mặc định của form
+            
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var message = document.getElementById('message').value;
+            
+                    var subject = 'Liên hệ từ ' + name;
+                    var body = 'Tên: ' + name + '  -  Email: ' + email + '  -  Thông điệp: ' + message;
+            
+                    window.location.href = 'mailto:lemyduyen232@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+                });
+            </script>                        
+            <div class="map">
+                <iframe id="map1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0525214701283!2d105.84729467540805!3d21.03058438771562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab957e696611%3A0x78967dc9c4202d2!2zNDEgUC4gSMOgbmcgVHLhu5FuZywgSMOgbmcgVHLhu5FuZywgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1720599472234!5m2!1sen!2s" style="border:0; width: 100%; height: 400px;"></iframe>
+                <iframe id="map2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1159894477914!2d105.84723027540807!3d21.028044487802866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9500ebaaab%3A0x81156359b7bacf0b!2zMzJiIFAuIE5ow6AgQ2h1bmcsIEjDoG5nIFRy4buRbmcsIEhvw6BuIEtp4bq_bSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1720601121998!5m2!1sen!2s" style="border:0; width: 100%; height: 400px; display: none;"></iframe>
+                <iframe id="map3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4459254345816!2d105.84775967540781!3d21.014836188256368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8c921565d1%3A0x8bf1cbf541120553!2zMTEyIFAuIFRyaeG7h3UgVmnhu4d0IFbGsMahbmcsIELDuWkgVGjhu4sgWHXDom4sIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1720601211840!5m2!1sen!2s" style="border:0; width: 100%; height: 400px; display: none;"></iframe>
+            </div>
+        </div>
+        <hr style="margin-top: 35px; opacity: 0.3; left: 0; right: 0; position: absolute;">
+        <div class="faq-section">
+            <div class="faq-section-wrapper">
+                <div class="faq-header">
+                    <h2>Các câu hỏi thường gặp !!!</h2>
+                    <p>Các câu hỏi khi đến với Kana khách hàng quan tâm nhiều nhất.</p>
+                    <p>Quý khách có thể liên hệ với chúng tôi để tìm hiểu thêm.</p>
+                </div>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <h3>Tôi có thể đổi trả sản phẩm không?</h3>
+                        <div class="faq-content">
+                            <p>Kana nhận đổi sản phẩm trong vòng 7 ngày đi kèm các điều kiện và Kana không nhận hoàn trả sản phẩm. Quý khách có thể xem thêm ở Chính sách bảo hành, đổi trả.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Kana có nhận sửa chữa sản phẩm không?</h3>
+                        <div class="faq-content">
+                            <p>Kana chỉ nhận sửa đơn giản như cắt gấu, bóp nhỏ... Đối với các sản phẩm nguyên giá, Kana sẽ hỗ trợ phí sửa; đối với sản phẩm sale từ 30%, quý khách vui lòng hỗ trợ phí sửa cho Kana.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Kana có mấy cửa hàng? Có cửa hàng ở Sài Gòn không?</h3>
+                        <div class="faq-content">
+                            <p>Hiện tại, Kana có 3 cơ sở ở Hà Nội. Kana chưa có cơ sở ở Sài Gòn, quý khách có thể mua hàng qua fanpage trên <a href="https://www.facebook.com/Kanafashion" style="color:#333; font-style: italic;">Facebook</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------- FOOTER --------------- -->
+    <style>
+        /* --------------------- Footer -------------------*/
+
+.footer {
+    background-color: #F1F1F1;
+    color: black;
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer div {
+    flex: 1;
+    padding: 0 20px; /* Thay đổi khoảng cách giữa các cột */
+    box-sizing: border-box;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer p, .footer a, .footer input {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 10px;
+    width: 100px; 
+    height: auto;
+}
+
+.footer-bottom-text {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    /* padding: 20px 0; */
+    width: 100%;
+}
+    </style>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="./img/logo.png" alt="Logo" class="footer-logo">
+                <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+            </div>
+            <div>
+                <h3>VỀ KANA</h3>
+                <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+                <p><a href="./tin_tuc.html">Tin Tức</a></p>
+                <p><a href="./he_thong_cua_hang.html">Hệ Thống Cửa Hàng</a></p>
+                <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+            </div>
+            <div>
+                <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                        <img src="./img/fb.svg" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                        <img src="./img/ig.webp" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                        <img src="./img/email.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                    <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+                </div>
+            </div>
+            <div>
+                <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+                <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+            </div>
+        </div>
+    </footer>
+    <p class="footer-bottom-text">© Bestlooker 2024. Based in Hanoi, Vietnam.</p> 
+</body>
+</html>

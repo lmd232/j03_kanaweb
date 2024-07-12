@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST Summer Gift</title>
+    <link rel="stylesheet" type="text/css" href="./css/style_bst.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="nav-container">
+            <img src="./img/logo.png" alt="Logo" class="logo">
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul id="nav-list">
+                <li><a href="./index.html">Trang chủ</a></li>
+                <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                <li><a href="./San_pham.html">Sản phẩm</a></li>
+                <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                <li><a href="./blogs.html">Tin tức</a></li>
+                <li><a href="./lien_he.html">Liên hệ</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>    
+<script>
+  window.addEventListener('scroll', function() {
+      var nav = document.querySelector('nav');
+      if (window.scrollY > 0) {
+          nav.classList.add('scrolled');
+      } else {
+          nav.classList.remove('scrolled');
+      }
+  });
+
+  // Toggle menu
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+      var navList = document.getElementById('nav-list');
+      if (navList.style.display === 'flex') {
+          navList.style.display = 'none';
+      } else {
+          navList.style.display = 'flex';
+      }
+  });
+</script>
+      <body>
+        <div class="banner">
+          <h1>BỘ SƯU TẬP SUMMER GIFT</h1>
+            <p>
+            <a href="./Linen.html" class="linen">Tơ lụa</a> | 
+            <a href="./summergift.html" class="linen">Summer Gift</a> | 
+            <a href="./harmony.html" class="linen">Harmony</a>
+          </p>
+          
+        </div>      
+        <br>
+  <br>
+
+          <div class="container">
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer1.html"><img src="./images/ipg/sm1.jpg" alt="Product 1"></a>
+                <h3>Summer Breeze Dress</h3>
+                <button><a href="./summer1.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer2.html"><img src="./images/ipg/sm2.jpg" alt="Product 1"></a>
+                <h3>Cloud Nine Dress</h3>
+                <button><a href="./summer2.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer3.html"><img src="./images/ipg/sm3.jpg" alt="Product 1"></a>
+                <h3>Fresh Dress</h3>
+                <button><a href="./summer3.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer4.html"><img src="./images/ipg/sm4.jpg" alt="Product 1"></a>
+                <h3>Flowy Summer Dress</h3>
+                <button><a href="./summer4.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer5.html"><img src="./images/ipg/sm5.jpg" alt="Product 1"></a>
+                <h3>Floral Bloom</h3>
+                <button><a href="./summer5.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="product-card">
+                <a href="./summer6.html"><img src="./images/ipg/sm6.jpg" alt="Product 1"></a>
+                <h3>Pink Dress</h3>
+               <button> <a href="./summer6.html">Xem Sản Phẩm</button></a>
+              </div>
+            </div>
+          </div>
+
+            <section class="product-section">
+              <h2>Bộ sưu tập khác</h2>
+              <div class="product-grid">
+                <div class="product-item">
+                  <a href="./Linen.html"><img src="./images/ipg/slide kana (1).png" alt="Signature Y Pattern Bandana"></a>
+                  <h3>BST Tơ lụa</h3>
+              </div>
+                  <div class="product-item">
+                   <a href="./harmony.html"><img src="./images/ipg/biahar.png" alt="Signature Y Pattern Bandana"></a>
+                      <h3>BST Harmony</h3>
+                  </div>   
+              </div>
+          </section>  
+          <!-- ------------------- FOOTER --------------- -->
+
+    <footer class="footer">
+      <div class="footer-inner">
+          <div>
+              <img src="./img/logo.png" alt="Logo" class="footer-logo">
+              <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+          </div>
+          <div>
+              <h3>VỀ KANA</h3>
+              <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+              <p><a href="./tin_tuc.html">Tin Tức</a></p>
+              <p><a href="./he_thong_cua_hang.html">Hệ Thống Cửa Hàng</a></p>
+              <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+          </div>
+          <div>
+              <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+              <div class="social-icons">
+                  <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                      <img src="./img/fb.svg" alt="Facebook">
+                      <span>Facebook</span>
+                  </a>
+                  <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                      <img src="./img/ig.webp" alt="Instagram">
+                      <span>Instagram</span>
+                  </a>
+                  <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                      <img src="./img/email.png" alt="Email">
+                      <span>Email</span>
+                  </a>
+                  <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+              </div>
+          </div>
+          <div>
+              <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+              <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+              <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+          </div>
+      </div>
+  </footer>
+  <p class="footer-bottom-text">© Bestlooker 2024. Based in London, United Kingdom.</p> 
+</body>
+</html>

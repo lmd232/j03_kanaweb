@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs thời trang</title>
+    <link rel="shortcut icon" href="./images/logo kana.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/style_blog.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+
+    <div class="banner">
+        <h1>BLOGS THỜI TRANG</h1>
+    </div>
+
+    <h5>Kết nối với Kana! Bắt kịp nhịp đập thời trang, làm đẹp và phong cách sống.</h5>
+
+  <br>
+  <br>
+  <div class="div-container">
+    <div class="div div-right">
+        <h2>Tin tức</h2>
+        <div class="div1">
+           
+            <div class="text-container">
+            <h3><a href="./Chitietblog/blog2.html">"GARDEN GIRL"</h3></a>
+            <p>Thẩm mỹ thời trang "garden girl" mang đến sự kết hợp ngọt ngào giữa......</p>
+            <p1>02:41 3/7/2024</p1>
+        </div>
+
+
+            <div class="div-image">
+                <a href="./Chitietblog/blog2.html"><img src="./images/ipg/blog1.jpg" alt="Product 1"> </a>
+            </div>
+        </div>
+           
+        <div class="div1">
+            <div class="text-container">
+            <h3><a href="./Chitietblog/blog3.html"> VAN CLEEF & ARPELS</h3></a>
+            <p>Vào một buổi tối đầu tháng 6 tại dinh thự lãnh sự Pháp, thương hiệu trang sức Van Cleef & Arpels...</p>
+            <p1>02:41 2/7/2024</p1>
+        </div>
+            <div class="div-image">
+                <a href="./Chitietblog/blog3.html"> <img src="./images/ipg/blog3.jpg" alt="Product 1" style: height > </a>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="text-container">
+            <h3>  <a href="./Chitietblog/blog4.html">4 NTK DRAG QUEEN "THẦM LẶNG"</h3></a>
+            <p>Đằng sau những bộ trang phục lộng lẫy, đầy ấn tượng của các drag queen là những nhà thiết kế tài...</p>
+            <p1>03:41 1/7/2024</p1>
+        </div>
+            <div class="div-image">
+                <a href="./Chitietblog/blog4.html"><img src="./images/ipg/blog4.jpg" alt="Product 1"></a>
+            </div>
+        </div>
+        <div class="div1">
+            <div class="text-container">
+            <h3><a href="./Chitietblog/blog5.html">THÁI LAN - THỜI TRANG BỀN VỮNG</h3></a>
+            <p>Bền vững không còn là xu hướng của ngành thời trang nói riêng tại Thái Lan mà đang trở thành một...
+            </p>
+            <p1>10:05 11/6/2024</p1>
+        </div>
+            <div class="div-image">
+                <a href="./Chitietblog/blog5.html"><img src="./images/ipg/blog5.jpg"alt="Product 1"></a>
+            </div>
+        </div>
+    </div>
+    <div class="div div-left">
+        <div class="div2">
+            <div class="div-image2">
+                <a href="./Chitietblog/blog1.html"><img src="./images/ipg/gucci.jpg" alt="Product 1"></a>
+            </div>
+            <div class="text-container1">
+            <h4><a href="./Chitietblog/blog1.html">TRIỂN LÃM GUCCI VISIONS Ở BANKOK: HÀNH <br> TRÌNH TRĂM NĂM LỊCH SỬ THỜI TRANG</h4></a>
+           </div>
+        </div>
+    </div>
+   </div>
+
+   <!-- ------------------- FOOTER --------------- -->
+
+   <footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <img src="./img/logo.png" alt="Logo" class="footer-logo">
+            <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+        </div>
+        <div>
+            <h3>VỀ KANA</h3>
+            <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+            <p><a href="./tin_tuc.html">Tin Tức</a></p>
+            <p><a href="./he_thong_cua_hang.html">Hệ Thống Cửa Hàng</a></p>
+            <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+        </div>
+        <div>
+            <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                    <img src="./img/fb.svg" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                    <img src="./img/ig.webp" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                    <img src="./img/email.png" alt="Email">
+                    <span>Email</span>
+                </a>
+                <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+            </div>
+        </div>
+        <div>
+            <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+            <p>Chính Sách Đổi Trả</p>
+            <p>Chính Sách Tích Điểm</p>
+            <p>Chế Độ Hậu Mãi</p>
+        </div>
+    </div>
+</footer>
+<p class="footer-bottom-text">© Bestlooker 2024. Based in London, United Kingdom.</p> 
+
+ </body>
+</html>

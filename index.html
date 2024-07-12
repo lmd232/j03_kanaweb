@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-con">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css">
+    <style>
+        .portfolio-filter {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-filter button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .portfolio-filter button.active,
+        .portfolio-filter button:hover {
+            border-bottom: 2px solid #000;
+        }
+
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            width: calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+        
+    <section class="duoimenu-section">
+        <div class="duoimenu-content">
+            <h1>"Hãy thử tôi để khám phá</h1>
+            <h1>vẻ đẹp tiềm ẩn của bạn."</h1>
+            <p style="font-style: italic;">Kana khẳng định mang đến những giá trị tốt nhất cho khách hàng</p>
+            <div class="buttons">
+                <a href="./lien_he.html">Liên hệ ngay</a>
+            </div>
+        </div>
+        <div class="duoimenu-images">
+            <img src="./img/anhsp/416838516_747317667431630_3402233025364507422_n.jpg" alt="Image 1">
+            <img src="./img/anhsp/447028540_836067738556622_3190591264580058836_n.jpg" alt="Image 2">
+            <img src="./img/anhsp/446944008_836066968556699_1774661473506920771_n.jpg" alt="Image 3">
+        </div>
+    </section>
+
+    <h2 style="text-align: center;">KHÁM PHÁ NGAY</h2>
+
+
+
+    <!-- -------------------- PHẦN DANH MỤC ------------------- -->
+    <section class="portfolio-section">
+        <div class="portfolio-filter">
+            <button class="active" data-filter="all">Sản phẩm nổi bật</button>
+            <button data-filter="bst">Bộ sưu tập</button>
+        </div>
+
+        <div class="portfolio-items" id="portfolio-items">
+            <!-- Nội dung sẽ được thay đổi bằng JavaScript -->
+        </div>
+    </section>
+    <!-- -------------------- HẾT PHẦN DANH MỤC ------------------- -->
+
+  
+
+    <!-- -------------------- FEEDBACK ------------------- -->
+    <style>
+        /* Phần chứa đội ngũ */
+        .team-section {
+            display: flex; /* Sử dụng flexbox để sắp xếp các phần theo chiều ngang */
+            justify-content: center;
+            align-items: flex-start; /* Căn chỉnh các phần bắt đầu từ trên cùng */
+            padding: 20px 0 70px 0;
+            gap: 40px; /* Khoảng cách giữa các phần */
+        }
+
+        /* Phần chứa câu trích dẫn */
+        .quote {
+            max-width: 420px; /* Đặt chiều rộng tối đa cho phần trích dẫn */
+            text-align: left; /* Căn trái văn bản */
+            padding-top: 60px;
+        }
+
+        /* Phần chứa các thành viên */
+        .team-members {
+            display: flex;
+            align-items: center; /* Căn giữa các thành viên theo chiều dọc */
+            overflow: hidden; /* Ẩn các thành viên nằm ngoài khung nhìn */
+            width: 520px; /* Đặt chiều rộng cho phần chứa thành viên */
+        }
+
+        /* Phong cách cho các thành viên */
+        .member-wrapper {
+            display: flex;
+            transition: transform 0.5s ease; /* Thêm hiệu ứng chuyển động khi cuộn */
+            gap: 20px; /* Khoảng cách giữa các thành viên */
+        }
+
+        .team-member {
+            text-align: center;
+            min-width: 250px; /* Đặt chiều rộng tối thiểu cho từng thành viên */
+        }
+
+        /* Hình ảnh thành viên */
+        .team-member img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Tên và chức vụ thành viên */
+        .team-member h3 {
+            margin: 10px 0 5px;
+        }
+
+        .team-member p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Mũi tên chuyển thành viên */
+        .arrow {
+            cursor: pointer;
+            font-size: 24px;
+            padding: 0 15px;
+            align-self: center; /* Căn giữa theo chiều dọc */
+        }
+    </style>
+
+    <h2>FEEDBACK</h2>
+    <div class="team-section">
+        <!-- Câu trích dẫn bên trái -->
+        <div class="quote">
+            <p style="font-size: 32px; font-family: 'Courier New', Courier, monospace; text-align: justify;"><strong>"Kana luôn mang đến những trải nghiệm tuyệt vời về sản phẩm lẫn dịch vụ."</strong></p>
+            <p style ="font-style: italic; ">—— Khách Hàng ——</p>
+        </div>
+        
+        <!-- Phần chứa các thành viên bên phải -->
+        <div class="arrow" id="arrow-left">&#9664;</div> <!-- Mũi tên trái -->
+        
+        <div class="team-members">
+            <div class="member-wrapper" id="member-wrapper">
+                <div class="team-member">
+                    <img src="./img/qashyn.jpeg" alt="Quynh Anh Shyn">
+                    <h3>Quỳnh Anh Shyn</h3>
+                    <p>Fashionista</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="./img/lequyen.jpeg" alt="Le Quyen">
+                    <h3>Lệ Quyên</h3>
+                    <p>Ca Sỹ</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="./img/hellytong.jpeg" alt="Helly Tong">
+                    <h3>Helly Tống</h3>
+                    <p>Người Sáng Tạo Nội Dung</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="./img/gghgiang.jpeg" alt="GiGi Huong Giang">
+                    <h3>GiGi Hương Giang</h3>
+                    <p>Nghệ Sỹ</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrow" id="arrow-right">&#9654;</div> <!-- Mũi tên phải -->
+    </div>
+
+    <script>
+        const memberWrapper = document.getElementById('member-wrapper');
+        const arrowLeft = document.getElementById('arrow-left');
+        const arrowRight = document.getElementById('arrow-right');
+
+        let currentIndex = 0;
+
+        arrowRight.addEventListener('click', () => {
+            const totalMembers = memberWrapper.children.length;
+            const visibleMembers = 2; // Số lượng thành viên hiển thị cùng lúc
+            if (currentIndex < totalMembers - visibleMembers) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Quay trở lại thành viên đầu tiên khi đã cuộn hết
+            }
+            updateMemberWrapper();
+        });
+
+        arrowLeft.addEventListener('click', () => {
+            const totalMembers = memberWrapper.children.length;
+            const visibleMembers = 2; // Số lượng thành viên hiển thị cùng lúc
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalMembers - visibleMembers; // Quay trở lại thành viên cuối cùng khi cuộn ngược
+            }
+            updateMemberWrapper();
+        });
+
+        function updateMemberWrapper() {
+            const memberWidth = memberWrapper.children[0].offsetWidth + 20; // Độ rộng mỗi thành viên + khoảng cách giữa các thành viên
+            const newTransform = -currentIndex * memberWidth;
+            memberWrapper.style.transform = `translateX(${newTransform}px)`;
+        }
+    </script>
+    <!-- -------------------- HẾT FEEDBACK ------------------- -->
+
+    <!-- --------------------- CÁC ĐIỂM TIN TƯỞNG ------------------- -->
+    <style>
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            background-color: #F1F1F1;
+            color: black;
+            position: relative;
+        }
+
+        .carousel-container {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 33.33%; /* Hiển thị 3 mục cùng lúc */
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .carousel-item h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        .carousel-item p {
+            font-size: 1em;
+            margin: 0 10px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-nav button {
+            background-color: transparent;
+            border: none;
+            font-size: 2em;
+            color: black;
+            cursor: pointer;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-indicators .dot {
+            height: 8px; /* Chiều cao của điểm chỉ báo */
+            width: 8px; /* Chiều rộng của điểm chỉ báo */
+            margin: 0 5px; /* Thêm khoảng cách trái và phải của điểm chỉ báo */
+            background-color: white; /* Đặt màu nền của điểm chỉ báo là màu trắng */
+            border-radius: 50%; /* Đặt điểm chỉ báo thành hình tròn */
+            display: inline-block; /* Đặt điểm chỉ báo là phần tử inline-block */
+            cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay khi di chuyển qua điểm chỉ báo */
+            border: 2px solid black; /* Thêm viền đen xung quanh điểm chỉ báo */
+        }
+
+        .carousel-indicators .dot.active {
+            background-color: black;
+        }
+    </style> 
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="carousel-item">
+                    <img src="./img/chatluong.png" alt="Chatluong" style="height: 60px; width: 60px;">
+                    <h3>Chất lượng</h3>
+                    <p>Kana cam kết mang đến những trải nghiệm tốt về sản phẩm và dịch vụ chất lượng.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/uytin.png" alt="Uytin">
+                    <h3>Uy tín</h3>
+                    <p>Kana đặt sự uy tín là một phần quan trọng trong quá trình giao tiếp với khách hàng.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/tantam.png" alt="Tantam">
+                    <h3>Tận tâm</h3>
+                    <p>Kana đặt sự hài lòng của khách hàng lên hàng đầu khi đến với chúng tôi.</p>
+                </div>
+        </div>
+    </section>
+
+    <!-- --------------------- HẾT ĐẢM BẢO ------------------- -->
+
+    <!-- ---------------------TIN TỨC------------------- -->
+    <style>
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            /* padding: 20px; */
+        }
+        .news-header {
+            display: flex;
+            justify-content: center; /* Căn giữa tiêu đề */
+            align-items: center;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            position: relative; /* Đặt vị trí tương đối */
+        }
+
+        .news-header h2 {
+            margin: 0;
+        }
+
+        .news-header a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1em;
+            position: absolute; /* Đặt vị trí tuyệt đối */
+            right: 0; /* Căn phải */
+        }
+
+        .news-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .news-card {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 30%;
+            margin-bottom: 10px;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news-card-content {
+            padding: 20px;
+        }
+
+        .news-card-title {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+        }
+
+        .news-card-text {
+            font-size: 1em;
+            color: #666;
+            /* text-align: justify; */
+        }
+
+        .news-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .news-card-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .news-card-author img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .news-card-author span {
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .news-card-date {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .news-card {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="news-container">
+        <div class="news-header">
+            <h2>Tin tức mới nhất</h2>
+            <a href="./blogs.html">Đọc thêm →</a>
+        </div>
+        <div class="news-cards">
+            <div class="news-card">
+                <a href="./Chitietblog/blog2.html"><img src="./images/ipg/blog2.1.jpg" alt="News Image"></a>
+                <div class="news-card-content">
+                    <a href="./Chitietblog/blog2.html"><h2 class="news-card-title">"Garden Girl"</h2></a>
+                    <p class="news-card-text">Thẩm mỹ thời trang "garden girl" mang đến sự kết hợp ngọt ngào giữa... Thẩm mỹ thời trang "garden girl" mang đến sự kết hợp ngọt ngào giữa...</p>
+                    <div class="news-card-footer">
+                        <div class="news-card-author">
+                            <img src="./img/logo.png" alt="Author">
+                            <span>Kana</span>
+                        </div>
+                        <span class="news-card-date">July 3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card">
+                <a href="./Chitietblog/blog3.html"><img src="./images/ipg/blog3.jpg" alt="News Image"></a>
+                <div class="news-card-content">
+                    <a href="./Chitietblog/blog3.html"><h2 class="news-card-title">Van Cleef & Arpels</h2></a>
+                    <p class="news-card-text">Vào một buổi tối đầu tháng 6 tại dinh thự lãnh sự Pháp, thương hiệu trang sức Van Cleef & Arpels...</p>
+                    <div class="news-card-footer">
+                        <div class="news-card-author">
+                            <img src="./img/logo.png" alt="Author">
+                            <span>Kana</span>
+                        </div>
+                        <span class="news-card-date">July 2</span>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card">
+                <a href="./Chitietblog/blog4.html"><img src="./images/ipg/blog4.jpg" alt="News Image"></a>
+                <div class="news-card-content">
+                    <a href="./Chitietblog/blog4.html"><h2 class="news-card-title">4 NTK Drag Queen</h2></a>
+                    <p class="news-card-text">Đằng sau những bộ trang phục lộng lẫy, đầy ấn tượng của các drag queen là những nhà thiết kế tài...</p>
+                    <div class="news-card-footer">
+                        <div class="news-card-author">
+                            <img src="./img/logo.png" alt="Author">
+                            <span>Kana</span>
+                        </div>
+                        <span class="news-card-date">July 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------- HẾT TIN TỨC --------------------- -->
+
+    <!-- ------------------- FOOTER --------------- -->
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="./img/logo.png" alt="Logo" class="footer-logo">
+                <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+            </div>
+            <div>
+                <h3>VỀ KANA</h3>
+                <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+                <p><a href="./tin_tuc.html">Tin Tức</a></p>
+                <p><a href="./lien_he.html">Hệ Thống Cửa Hàng</a></p>
+                <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+            </div>
+            <div>
+                <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                        <img src="./img/fb.svg" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                        <img src="./img/ig.webp" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                        <img src="./img/email.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                    <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+                </div>
+            </div>
+            <div>
+                <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+                <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+            </div>
+        </div>
+    </footer>
+    <p class="footer-bottom-text">© Bestlooker 2024. Based in Hanoi, Vietnam.</p> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter button');
+            const portfolioItemsContainer = document.getElementById('portfolio-items');
+
+            const items = {
+                all: [
+                    { img: './img/anhsp/449263371_853872283442834_1215096814647667675_n.jpg', title: 'Fresh Dress' },
+                    { img: './img/anhsp/449062474_853872246776171_1916446075082821135_n.jpg', title: 'Cloud Nine Dress' },
+                    { img: './img/anhsp/449266220_853872010109528_6580560816821634060_n.jpg', title: 'Lotus Dress' },
+                    { img: './img/anhsp/449069205_853872150109514_1217367814230512175_n.jpg', title: 'Elrever Dress' },
+                    { img: './img/anhsp/449066868_853872336776162_7484428590667931362_n.jpg', title: 'Summer Breeze Dress' },
+                    { img: './img/anhsp/438255123_818657653630964_581411849431314261_n.jpg', title: 'Pleated Skirt' }
+                ],
+                bst: [
+                    { img: './img/anhsp/449066358_853872083442854_954607697952467513_n.jpg', title: 'Delicate Beauty' },
+                    { img: './img/anhsp/449282828_853871960109533_9133151216829614328_n.jpg', title: 'Perfect Harmony' },
+                    { img: './img/anhsp/449430504_1509519226354211_9069394794327981500_n.jpg', title: 'Balanced Beauty' },
+                    { img: './img/anhsp/446975657_836072765222786_7314742036881456007_n.jpg', title: 'Gentle Style' },
+                    { img: './img/anhsp/441896959_836075008555895_5586860972068879341_n.jpg', title: 'Serene Style' },
+                    { img: './img/anhsp/449066499_853870170109712_2266408167835147185_n.jpg', title: 'Unified Elegance' }
+                ]
+            };
+
+            function renderItems(category) {
+                portfolioItemsContainer.innerHTML = '';
+                items[category].forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'portfolio-item';
+                    itemElement.innerHTML = `
+                        <img src="${item.img}" alt="${item.title}">
+                        <h2>${item.title}</h2>
+                    `;
+                    portfolioItemsContainer.appendChild(itemElement);
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+                    renderItems(filter);
+                });
+
+                button.addEventListener('dblclick', () => {
+                    const filter = button.getAttribute('data-filter');
+                    if (filter === 'all') {
+                        window.location.href = './san_pham.html';
+                    } else if (filter === 'bst') {
+                        window.location.href = './branding.html';
+                    } 
+                });
+            });
+
+            // Render items for "all" category by default
+            renderItems('all');
+        });
+
+    </script>
+
+</body>
+</html>

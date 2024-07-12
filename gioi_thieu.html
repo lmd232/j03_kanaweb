@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu</title>
+    <link rel="shortcut icon" href="./images/logo kana.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/gioithieu.css">
+</head>
+<body>
+    <style>
+        
+    </style>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+
+    <section class="hero">
+        <h1>Hãng thời trang Kana</h1>
+        <p style ="font-style: italic;">Phong cách thời trang tinh tế và hiện đại</p>
+    </section>
+
+    <section class="about">
+        <h2>Giới thiệu về Kana</h2>
+        <p>Kana là một thương hiệu thời trang nổi tiếng với phong cách tinh tế, hiện đại và luôn bắt kịp xu hướng. Chúng tôi cam kết mang đến cho khách hàng những sản phẩm chất lượng cao với thiết kế độc đáo và sang trọng.</p>
+        <p>Kana được bắt đầu khi người sáng lập có 1 thời gian dài học tập và làm việc tại Nhật Bản. Trong suốt quá trình học hỏi, chị Nguyễn Thị Thanh Giang - Founder của Kana đã bị thu hút và thực sự cảm thấy ấn tượng với phong cách thời trang Nhật Bản.
+            Sau đó, chị về nước và sáng lập nên Kana - Thương hiệu thời trang khá có tiếng tại Việt Nam. Các năm sau, Kana đã dần mở rộng quy mô với nhiều chi nhánh khắp Hà Nội. Sản phẩm của Kana đang ngày càng được yêu thích hơn bởi sự pha trộn, cách tân giữa hiện đại và cổ truyền,
+            điều chỉnh hài hòa giữa thời trang Việt Nam và Nhật Bản, vẫn giữ 1 số điểm độc đáo và đơn giản của Nhật, dễ ứng dụng, dễ mặc. 
+        </p>
+    </section>
+
+    <section class="gallery">
+        <h2>Sản phẩm nổi bật</h2>
+        <section class="new-arrivals">
+            <div class="news-container">
+                <div class="news-header"></div>
+            </div>
+            <div class="row">
+                <div class="item" style="margin-top: 100px;">
+                    <img src="./img/anh35.jpg" alt="Elrever Dress">
+                    <h3><a href="./san_pham_Elrever Dress.html">Elrever Dress</a></h3>
+                </div>
+                <div class="item">
+                    <img src="./img/anh38.jpg" alt="Lotus Dress">
+                    <h3><a href="./san_pham_Lotus Dress.html">Lotus Dress</a></h3>
+                </div>
+                <div class="item" style="margin-top: 100px;">
+                    <img src="./img/anh08.jpg" alt="Summer Breeze Dress">
+                    <h3><a href="./san_pham_03.html">Summer Breeze Dress</a></h3>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <!-- ------------------- FOOTER --------------- -->
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="./img/logo.png" alt="Logo" class="footer-logo">
+                <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+            </div>
+            <div>
+                <h3>VỀ KANA</h3>
+                <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+                <p><a href="./blogs.html">Tin Tức</a></p>
+                <p><a href="./lien_he.html">Hệ Thống Cửa Hàng</a></p>
+                <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+            </div>
+            <div>
+                <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                        <img src="./img/fb.svg" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                        <img src="./img/ig.webp" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                        <img src="./img/email.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                    <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+                </div>
+            </div>
+            <div>
+                <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+                <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+            </div>
+        </div>
+    </footer>
+    <p class="footer-bottom-text">© Bestlooker 2024. Based in Hanoi, Vietnam.</p> 
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linen2</title>
+    <link rel="shortcut icon" href="./images/ipg/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/style_ctsp.css">
+    <script src="./bst.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+    <div class="banner">
+        <h1>BỘ SƯU TẬP TƠ LỤA </h1>
+          <p>
+          <a href="./Linen.html" class="linen">Tơ lụa</a> | 
+          <a href="./summergift.html" class="linen">Summer Gift</a> | 
+          <a href="./harmony.html" class="linen">Harmony</a>
+        </p>
+      </div>
+      <div class="product">
+    <div class="product-container">
+        <div class="product-image">
+            <img src="./images/ipg/linen2.jpg" alt="Product Image" width="300">
+        </div>
+        <div class="product-details">
+            <div class="product-title">Tơ Cam</div>
+            <div class="product-contact">Contact: 02466842255</div>
+            <div class="size-selection">
+                <span style=" font-weight: bold;">KÍCH CỠ</span><br>
+                <input type="radio" id="size-xs" name="size" value="XS">
+                <label for="size-xs">XS</label>
+                <input type="radio" id="size-s" name="size" value="S">
+                <label for="size-s">S</label>
+                <input type="radio" id="size-m" name="size" value="M">
+                <label for="size-m">M</label>
+                <input type="radio" id="size-l" name="size" value="L">
+                <label for="size-l">L</label>
+                <input type="radio" id="size-xl" name="size" value="XL">
+                <label for="size-xl">XL</label>
+            </div>
+            <div class="size-guide">
+                <a href="#">Bảng quy đổi kích cỡ</a><br>
+                Kích cỡ người mẫu: S<br>
+                Chiều cao người mẫu: 168cm
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    <div class="tabs">
+        <div class="tab-title active" data-tab="details">Thông tin chi tiết</div>
+        <div class="tab-title" data-tab="care">Hướng dẫn bảo quản</div>
+    </div>
+
+    <div id="details" class="tab active">
+        <h2>Thông tin chi tiết</h2>
+        <p>Sản phẩm bao gồm:</p>
+        <h3>Áo</h3>
+        <ul>
+            <li>Chất liệu: Tơ lụa</li>
+            <li>Màu sắc: Cam gạch</li>
+            <li>Là kiểu áo dài pha giữa truyền thống và hiện đại</li>
+            <li>Cổ tròn, thiết kế cách điệu được thêu hoa nhí</li>
+        </ul>
+        <h3>Quần</h3>
+        <ul>
+            <li>Chất liệu: Tơ lụa</li>
+            <li>Dáng rộng thoải mái</li>
+        </ul>
+    </div>
+
+    <div id="care" class="tab">
+        <h2>Hướng dẫn bảo quản</h2>
+        <ul>
+            <li>Giặt ở nhiệt độ thấp, không quá 30°C</li>
+            <li>Không sử dụng chất tẩy rửa mạnh</li>
+            <li>Phơi ở nơi thoáng mát, tránh ánh nắng trực tiếp</li>
+            <li>Ủi ở nhiệt độ thấp, không quá 110°C</li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<section class="product-section">
+    <h2>CÁC SẢN PHẨM KHÁC</h2>
+    <div class="product-grid">
+        <div class="product-item">
+            <a href="./linen1.html"><img src="./images/ipg/linen1.jpg" alt="Signature Y Pattern Bandana"></a>
+            <h3>Duyên Lụa</h3>
+              <button><a href="./linen1.html">Xem Sản Phẩm</button></a>
+        </div>
+        <div class="product-item">
+            <a href="./linen3.html"><img src="./images/ipg/linen3.jpg" alt="Logo Football Jersey - Grey"></a>
+            <h3>Cõi Mơ Lụa</h3>
+              <button><a href="./linen3.html">Xem Sản Phẩm</button></a>
+        </div>
+        <div class="product-item">
+            <a href="./linen4.html"><img src="./images/ipg/linen4.jpg" alt="Logo Football Jersey - Green"></a>
+            <h3>Lụa Bay </h3>
+            <button><a href="./linen4.html">Xem Sản Phẩm</button></a>
+        </div>
+        <div class="product-item">
+            <a href="./linen5.html"><img src="./images/ipg/linen5.jpg" alt="Script Logo Nylon Shorts"></a>
+            <h3>Lụa Mơ</h3>
+              <button><a href="./linen5.html"></a>Xem Sản Phẩm</button></a>
+        </div>
+        
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <img src="./img/logo.png" alt="Logo" class="footer-logo">
+            <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+        </div>
+        <div>
+            <h3>VỀ KANA</h3>
+            <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+            <p><a href="./tin_tuc.html">Tin Tức</a></p>
+            <p><a href="./lien_he.html">Hệ Thống Cửa Hàng</a></p>
+            <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+        </div>
+        <div>
+            <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                    <img src="./img/fb.svg" alt="Facebook">
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                    <img src="./img/ig.webp" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                    <img src="./img/email.png" alt="Email">
+                    <span>Email</span>
+                </a>
+                <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+            </div>
+        </div>
+        <div>
+            <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+            <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+            <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+        </div>
+    </div>
+</footer>
+<p class="footer-bottom-text">© Bestlooker 2024. Based in Hanoi, Vietnam.</p> 
+</body>
+</html>

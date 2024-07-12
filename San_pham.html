@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="shortcut icon" href="./images/logo kana.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-list">
+                    <li><a href="./index.html">Trang chủ</a></li>
+                    <li><a href="./gioi_thieu.html">Giới thiệu</a></li>
+                    <li><a href="./San_pham.html">Sản phẩm</a></li>
+                    <li><a href="./Linen.html">Bộ sưu tập</a></li>
+                    <li><a href="./blogs.html">Tin tức</a></li>
+                    <li><a href="./lien_he.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <script>
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    
+        // Toggle menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var navList = document.getElementById('nav-list');
+            if (navList.style.display === 'flex') {
+                navList.style.display = 'none';
+            } else {
+                navList.style.display = 'flex';
+            }
+        });
+    </script>
+
+    
+    <div class="slidebar">
+        <h1>KANA</h1>
+        <p>Sự Đơn Giản Là Định Nghĩa Của Thanh Lịch</p>
+        <div class="container">
+            <div class="menu">
+                <a href="#">Sáng tạo</a>
+                <a href="#">Nhẹ nhàng</a>
+                <a href="#">Thanh lịch</a>
+                <a href="#">Thu hút</a>
+            </div>
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="./img/anh39.jpg" alt="Perfect Harmony">
+                    <div class="title">Perfect Harmony</a></div>
+                    <button><a href="./san_pham_01.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh36.jpg" alt="Fresh Dress">
+                    <div class="title">Fresh Dress</a></div>
+                    <button><a href="./san_pham_02.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh24.jpg" alt="Pleated skirt">
+                    <div class="title">Pleated skirt</a></div>
+                    <button><a href="./san_pham_03.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh25.jpg" alt="Basic item">
+                    <div class="title">Basic item</a></div>
+                    <button><a href="./san_pham_04.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh16.jpg" alt="Handmade item">
+                    <div class="title">Handmade item</a></div>
+                    <button><a href="./san_pham_05.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh10.jpg" alt="Zebra item">
+                    <div class="title">Zebra item</a></div>
+                    <button><a href="./san_pham_06.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh09.jpg" alt="Layered skirt">
+                    <div class="title">Layered skirt</a></div>
+                    <button><a href="./san_pham_07.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh11.jpg" alt="Lụa mơ">
+                    <div class="title">Lụa mơ</a></div>
+                    <button><a href="./san_pham_08.html">Xem Sản Phẩm</button></a>
+                </div>
+                <div class="grid-item">
+                    <img src="./img/anh02.jpg" alt="Summer item">
+                    <div class="title">Summer item</a></div>
+                    <button><a href="./san_pham_09.html">Xem Sản Phẩm</button></a>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+
+    
+    <!-- ------------------- FOOTER --------------- -->
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="./img/logo.png" alt="Logo" class="footer-logo">
+                <p style="padding-left: 10px; width: 170px; font-style: italic;">Hãy thử tôi để khám phá vẻ đẹp tiềm ẩn của bạn.</p>
+            </div>
+            <div>
+                <h3>VỀ KANA</h3>
+                <p><a href="./gioi_thieu.html">Giới Thiệu</a></p>
+                <p><a href="./tin_tuc.html">Tin Tức</a></p>
+                <p><a href="./lien_he.html">Hệ Thống Cửa Hàng</a></p>
+                <p style="color:grey;font-size: 10px;">Opening hours 8:00 AM - 9 PM</p>
+            </div>
+            <div>
+                <h3 style="padding-left: 20px;">LIÊN HỆ</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Kanafashion" target="_blank">
+                        <img src="./img/fb.svg" alt="Facebook">
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/kanashop_vn/" target="_blank">
+                        <img src="./img/ig.webp" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="mailto:kanafashionofficial@gmail.com" target="_blank">
+                        <img src="./img/email.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                    <a><img src="./img/phone.png" alt="Hotline"><span>024 6684 2255</span></a>
+                </div>
+            </div>
+            <div>
+                <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                <p><a href ="./baohanh_doitra.html">Chính Sách Bảo Hành, Đổi Trả</a></p>
+                <p><a href ="./chinh_sach_bao_mat.html">Chính Sách Bảo Mật</a></p>
+            </div>
+        </div>
+    </footer>
+    <p class="footer-bottom-text">© Bestlooker 2024. Based in Hanoi, Vietnam.</p> 
+</body>
+</html>

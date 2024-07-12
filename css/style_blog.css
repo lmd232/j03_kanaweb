@@ -1,0 +1,488 @@
+body {
+    font-family:'Times New Roman', Times, serif; 
+  }
+  header {
+    box-sizing: border-box;
+    background-color:white;
+    padding: 10px;
+    /* border: 2px solid grey; */
+    margin-top:60px;
+  }
+
+  header h1 {
+    text-align: center;
+    font-size: 20px;
+
+  }
+  
+  a:link {
+    text-decoration: none; 
+    color: black;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung bên trong nav */
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Căn logo sang trái và menu sang phải */
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(52, 51, 51);
+    font-weight: bold;
+    padding: 10px 15px;
+    position: relative;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: black;
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: black;
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: 40px;
+}
+
+nav.scrolled {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/* ----------------- Màn hình thu nhỏ <thanh menu> ---------------- */
+@media (max-width: 1024px) {
+  .menu-toggle {
+      display: flex;
+      margin: 0 auto; /* Căn giữa menu-toggle */
+  }
+  
+  #nav-list {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: white;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      text-align: center;
+  }
+
+  #nav-list li {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  #nav-list li a {
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+  }
+}
+
+
+
+/* --------------- */
+  .banner {
+    background-color: #F1F1F1;
+    padding: 40px 0 40px 0;
+    text-align: center;
+  }
+  .banner h1 {
+    font-size: 48px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+
+  h5 {
+    font-size: 25px;
+    text-align: center;
+    border: 2px solid grey;
+    padding: 30px;
+  }
+  
+  .div1 {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 10px;
+    flex-direction: row-reverse;
+  
+  }
+.div2 {
+    padding: 10px;
+    display: column;
+}
+
+
+
+/* Chia div thành 2 phần */
+.div-container {
+    display: flex;
+        flex-direction: row-reverse;
+        margin-left: 30px; /* Khoảng cách 40px cho lề trái */
+    margin-right: 30px;    
+
+}
+
+.div-right {
+    flex: 2;
+    background-color:white;
+}
+.div-right h2{
+  text-align: center;
+  font-size: 35px;
+
+}
+
+.div-left {
+    flex: 2;
+    background-color: #fff;
+}
+
+.div-left,
+.div-right {
+    padding: 20px; /* Add padding for content spacing */
+  }
+  .div-left,
+  .header{
+    padding: 50px; /* Add padding for content spacing */
+  }
+
+
+
+/* Cài đặt cho text-container */
+.text-container {
+    flex: 1; /* Cho phép co giãn */
+    padding: 5px; /* Khoảng trống bên trong */
+    line-height: 1; /* Khoảng cách dòng */
+
+}
+
+/* Cài đặt cho div-image */
+.div-image {
+  width: 200px; /* Set image width */
+  text-align: center; /* Center the image horizontally */
+  margin-right: 20px; /* Khoảng cách giữa ảnh và chữ */
+
+}
+
+.div-image img {
+  max-width: 100%; /* Ensure image stays within container */
+  height: 100%; /* Maintain image aspect ratio */
+  border-radius: 5px; /* Optional: Add rounded corners to image */
+}
+
+
+.div-image2 {
+  width: 100%; 
+    margin-right: 20px; /* Khoảng cách giữa ảnh và chữ */
+}
+
+.div-image2 img {
+    width: 100%; /* Chiều rộng ảnh 100% */
+    height: 80%; 
+    object-fit: cover; /* Cắt ảnh để vừa khung */
+}
+.text-container2 {
+    flex: 1; /* Cho phép co giãn */
+    padding: 5px; /* Khoảng trống bên trong */
+    line-height: 1; /* Khoảng cách dòng */
+    text-align: center;
+}
+
+
+
+
+.div-left1{
+  padding: 150px; /* Add padding for content spacing */
+}
+  
+
+.div-left1 img {
+    width: 100%; /* Ensure images don't overflow their containers */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Treat images as block elements */
+    border: 1px solid #ccc; /* Add a subtle border */
+  border-radius: 5px; /* Add rounded corners */
+  margin: 20px auto;
+    
+  }
+  .div-left1 h2 {
+    text-align: center; /* Center the heading horizontally */
+    font-size: 2rem; /* Adjust font size as needed */
+    font-weight: bold; /* Make the heading bold */
+    margin-bottom: 20px; /* Add spacing below the heading */
+
+
+  }
+
+  .div-left2{
+    padding: 50px; /* Add padding for content spacing */
+    margin-left: 150px; /* Khoảng cách 40px cho lề trái */
+   margin-right: 150px;
+  }
+    
+  
+  .div-left2 img {
+      width: 100%; /* Ensure images don't overflow their containers */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Treat images as block elements */
+      border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 5px; /* Add rounded corners */
+    margin: 20px auto;
+    }
+      
+    
+    .div-left2 h2 {
+      text-align: center; /* Center the heading horizontally */
+      font-size: 30px; /* Adjust font size as needed */
+    }
+
+  a {
+    text-decoration: none;
+    color: inherit; /* Keep the default text color */
+
+  }
+  .div-left2 p {
+    font-style: italic;
+    font-weight: lighter;
+  }
+  
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .div1 p1 {
+    font-size: 11px;
+    font-weight:lighter;
+    font-style: italic;
+  }
+  
+
+  /* --------------------- Footer -------------------*/
+
+.footer {
+  background-color: #F1F1F1;
+  color: black;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer div {
+  flex: 1;
+  padding: 0 20px; /* Thay đổi khoảng cách giữa các cột */
+  box-sizing: border-box;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer p, .footer a, .footer input {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 10px;
+  width: 100px; 
+  height: auto;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  /* padding: 20px 0; */
+  width: 100%;
+}
+
+/* --------------------- Footer -------------------*/
+
+.footer {
+  background-color: #F1F1F1;
+  color: black;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer div {
+  flex: 1;
+  padding: 0 20px; /* Thay đổi khoảng cách giữa các cột */
+  box-sizing: border-box;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer p, .footer a, .footer input {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 10px;
+  width: 100px; 
+  height: auto;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  /* padding: 20px 0; */
+  width: 100%;
+}
